@@ -1,0 +1,188 @@
+/* Shared
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+body{
+    /*background: url("/images/noise.png"), url('/images/section_background.png') center/cover;*/
+    background: url("/images/noise.png"), #F1F1F1 center;
+
+}
+a{
+    color: #41b2e6;
+    text-decoration: none;
+    transition: 0.75s;
+}
+a:hover{
+    color: #65c9e6;
+    text-decoration: none;
+    border-bottom: 0.1em inset #65c9e6;
+    transition: 0.25s;
+}
+
+h1, h2, h3, h4{
+    color: #41b2e6;
+}
+/* Site Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+header{
+    margin-top: 2em;
+}
+
+header h1 a:not(.active):hover::before{
+    position: absolute;
+    display: inline-block;
+    content: "\f177";
+    margin-left: -1em;
+    transition: 1s;
+}
+header h1 a.active:hover {
+    border-bottom: none;
+    pointer-events: none;
+    cursor: default;
+    color: #41b2e6;
+}
+/* Nav
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+nav{
+    text-align: center;
+    border-bottom: 0.1em solid #a1a1a1;
+    margin-bottom: 1em;
+}
+nav a {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    transition: 0.3s;
+}
+nav a:hover{
+    background-color: #41b2e6;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5em;
+    border-bottom: none;
+}
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+tr:not(hover){
+    transition: 1.5s;
+}
+tr:hover{
+    background-color: rgba(0,0,0,0.05);
+    transition: none;
+}
+
+/* Images
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+img{
+    text-align: center;
+    display: block;
+}
+
+/* Edit this Page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#edit_page{
+    float: right;
+    margin: 1em;
+}
+
+/* Home Page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.post{
+    overflow:hidden;
+}
+.post img{
+    max-width: 100%;
+}
+
+.post time{
+    position: relative;
+    top:-1em;
+    float: right;
+    font-size: 0.9em;
+    color: #747474;
+}
+
+/* Other
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Bigger than 550 */
+@media (min-width: 550px) {
+    section {
+        padding: 12rem 0 11rem;
+    }
+
+    .home {
+        padding-bottom: 12rem;
+        text-align: left;
+        height: 165px;
+    }
+
+    .image {
+        position: relative;
+        top: -7rem;
+        right: 3rem;
+        max-height: 362px;
+        z-index: 3;
+    }
+
+    .home-heading {
+        font-size: 2.4rem;
+    }
+}
+
+/* Bigger than 750 */
+@media (min-width: 750px) {
+    .home {
+        height: 190px;
+    }
+
+    .home-heading {
+        font-size: 2.6rem;
+    }
+
+    section {
+        padding: 14rem 0 15rem;
+    }
+
+    .home {
+        padding: 16rem 0 14rem;
+    }
+
+    .section-description {
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .image {
+        top: -14rem;
+        right: 5rem;
+        max-height: 510px;
+    }
+
+    .why-strava {
+        padding: 15rem 0 8rem;
+    }
+}
+
+/* Bigger than 1000 */
+@media (min-width: 1000px) {
+    section {
+        padding: 8rem 0 3.5rem;
+    }
+
+    .home {
+        padding: 22rem 0;
+    }
+
+    .home-heading {
+        font-size: 3.0rem;
+    }
+
+    .image {
+        top: -16rem;
+        max-height: 615px;
+    }
+
+}

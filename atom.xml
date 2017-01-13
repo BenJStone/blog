@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    <title>James' Blog</title>
+    <link href="https://blog.jamesst.one/atom.xml" rel="self"/>
+    <link href="https://blog.jamesst.one"/>
+    <updated>2017-01-13T04:01:26+00:00</updated>
+    <id>https://blog.jamesst.one</id>
+    
+
+    
+    <entry>
+        <title>IFTTT: Spotify playlist to Dropbox &#8211; Version 2</title>
+        <link href="https://blog.jamesst.one/2015/02/ifttt-spotify-playlist-dropbox-version-2/"/>
+        <updated>2015-02-04T00:00:00+00:00</updated>
+        <id>https://blog.jamesst.one1105</id>
+        <content type="html">&lt;p&gt;This is a post about an IFTTT recipe I made. Not sure what &lt;a href=&quot;/2013/11/ifttt/&quot;&gt;IFTTT is&lt;/a&gt; ?&lt;/p&gt;
+
+&lt;p&gt;Unfortunately for sometime now &lt;a href=&quot;/2013/11/ifttt-spotify-playlist-dropbox/&quot;&gt;version 1&lt;/a&gt; of these recipes hasn’t been working.
+Now that I have some more time on my hands I have decided to fix it.&lt;/p&gt;
+
+&lt;h2 id=&quot;improvements&quot;&gt;Improvements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It now works again!&lt;/li&gt;
+  &lt;li&gt;Its quicker than version 1&lt;/li&gt;
+  &lt;li&gt;Works more reliably.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;disadvantages&quot;&gt;Disadvantages&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Only works for the first 100 songs in playlists with more the 100 songs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;technical-differencesbetween-versions&quot;&gt;Technical differences between versions&lt;/h2&gt;
+
+&lt;table class=&quot;table table-striped table-bordered&quot;&gt;
+  &lt;tr&gt;
+    &lt;th&gt;
+    &lt;/th&gt;
+    
+    &lt;th&gt;
+      Version 1
+    &lt;/th&gt;
+    
+    &lt;th&gt;
+      Version 2
+    &lt;/th&gt;
+  &lt;/tr&gt;
+  
+  &lt;tr&gt;
+    &lt;th&gt;
+      Backend
+    &lt;/th&gt;
+    
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          Yahoo Pipes
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          PHP ( I now know PHP :D )
+        &lt;/li&gt;
+        &lt;li&gt;
+          Memcache
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  
+  &lt;tr&gt;
+    &lt;th&gt;
+      APIs used
+    &lt;/th&gt;
+    
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          Last Fm
+        &lt;/li&gt;
+        &lt;li&gt;
+          Soundcloud
+        &lt;/li&gt;
+        &lt;li&gt;
+          Spotify (Unofficial through webpage scrapping)
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          Last Fm
+        &lt;/li&gt;
+        &lt;li&gt;
+          Soundcloud
+        &lt;/li&gt;
+        &lt;li&gt;
+          Spotify (Official)
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;upgrading-to-new-version&quot;&gt;Upgrading to new version&lt;/h2&gt;
+
+&lt;p&gt;Nothing should need to be changed when upgrading from the previous version.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-new-version&quot;&gt;Using New Version&lt;/h2&gt;
+
+&lt;h3 id=&quot;what-this-recipe-does&quot;&gt;What this recipe does&lt;/h3&gt;
+
+&lt;p&gt;These recipes download the songs in your Spotify Playlist via Last.fm Free Music and Soundcloud downloadable tracks. The tracks at these sites have been submitted by the artist and been marked as free and downloadable for the public.&lt;/p&gt;
+
+&lt;h3 id=&quot;recipes&quot;&gt;Recipes&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;What’s the difference?&lt;/strong&gt; &lt;em&gt;Download only exact matches&lt;/em&gt; only does steps 1 to 3 of &lt;em&gt;How it Works  &lt;/em&gt;Below. As such it is very limiting (it only gets the exact song).&lt;/p&gt;
+
+&lt;h4 id=&quot;download-only-exact-matches-source-lastfm-free-music&quot;&gt;Download only exact matches (source Last.fm Free Music)&lt;/h4&gt;
+
+&lt;p&gt;Save to box&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;embed_recipe-126747&quot; class=&quot;embed_recipe embed_recipe-l_83&quot; href=&quot;https://ifttt.com/view_embed_recipe/126747&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126747&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #Box #free #music #Exact&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Save to dropbox&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;embed_recipe-126750&quot; class=&quot;embed_recipe embed_recipe-l_87&quot; href=&quot;https://ifttt.com/view_embed_recipe/126750&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126750&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #Dropbox #free #music #Exact&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Save to google drive&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;embed_recipe-126748&quot; class=&quot;embed_recipe embed_recipe-l_91&quot; href=&quot;https://ifttt.com/view_embed_recipe/126748&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126748&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #googledrive #free #music #Exact&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;save to skydrive&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;embed_recipe-126749&quot; class=&quot;embed_recipe embed_recipe-l_88&quot; href=&quot;https://ifttt.com/view_embed_recipe/126749&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126749&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #Skydrive #free #music #Exact&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;download-all-source-lastfm-free-music-and-soundcloud&quot;&gt;Download all (Source Last.fm Free Music and Soundcloud)&lt;/h4&gt;
+
+&lt;p&gt;Save to box&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;embed_recipe-126754&quot; class=&quot;embed_recipe embed_recipe-l_81&quot; href=&quot;https://ifttt.com/view_embed_recipe/126754&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126754&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #Box #free #music #all&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Save to dropbox&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;embed_recipe-126753&quot; class=&quot;embed_recipe embed_recipe-l_85&quot; href=&quot;https://ifttt.com/view_embed_recipe/126753&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126753&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #Dropbox #free #music #all&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Save to google drive&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;embed_recipe-126752&quot; class=&quot;embed_recipe embed_recipe-l_89&quot; href=&quot;https://ifttt.com/view_embed_recipe/126752&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126752&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #googledrive #free #music #all&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;save to skydrive&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;embed_recipe-126751&quot; class=&quot;embed_recipe embed_recipe-l_86&quot; href=&quot;https://ifttt.com/view_embed_recipe/126751&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126751&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #Skydrive #free #music #all&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;set-up-instructions&quot;&gt;Set up Instructions&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;In Spotify right click on your playlist and select *Copy Spotify URI&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/post_assets/Screenshot-2013-11-06-17.29.24.png&quot; alt=&quot;How to Copy Spotify URI&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;How to Copy Spotify URI&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Then go to the desired recipe (&lt;em&gt;links above&lt;/em&gt;)&lt;/li&gt;
+      &lt;li&gt;In the URL field paste your &lt;em&gt;Spotify URI &lt;/em&gt;after the “=” sign&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/post_assets/Screenshot-2013-11-06-18.23.19.png&quot; alt=&quot;Paste the Spotify URI after the &amp;quot;=&amp;quot; sign&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;Paste the Spotify URI after the &quot;=&quot; sign&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;In order for the script to work the feed url you just completed in step 3 needs to be loaded once ( without IFTTT) so copy the complete feed url from IFTTT and paste it into your browser&amp;lt;/ol&amp;gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The script checks your Spotify playlist&lt;/li&gt;
+  &lt;li&gt;Then song by song it checks to see if the song is available legally for free from Last.fm&lt;/li&gt;
+  &lt;li&gt;If it is the script tells IFTTT to add it to your Dropbox or equivalent.&lt;/li&gt;
+  &lt;li&gt;If it isn’t the script searches Soundcloud for the songs title and artist and then downloads the first &lt;em&gt;downloadable&lt;/em&gt; song. This is why remixed version are often downloaded.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;other-ifttt-recipes&quot;&gt;Other IFTTT recipes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I made a post about how I use IFTTT -&lt;em&gt;&lt;a href=&quot;/2013/11/my-ifttt-recipes/&quot; title=&quot;How I use IFTTT&quot;&gt;interested&lt;/a&gt;?&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ifttt.com/p/jamesmstone&quot;&gt;My Public IFTTT Profile&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;help&quot;&gt;Help&lt;/h2&gt;
+
+&lt;p&gt;Need help? Have a suggestion? Please leave a comment&lt;/p&gt;
+
+&lt;p&gt;Note: I’m still working on the &lt;em&gt;Download all (Source Last.fm Free Music and Soundcloud)&lt;/em&gt; version Soundcloud API issues so  for now the  &lt;em&gt;Download all&lt;/em&gt; version is working like the &lt;em&gt;exact&lt;/em&gt; version, but that is soon to change.&lt;/p&gt;
+
+</content>
+    </entry>
+    
+    <entry>
+        <title>Cloud HQ</title>
+        <link href="https://blog.jamesst.one/2014/05/cloud-hq/"/>
+        <updated>2014-05-25T00:00:00+00:00</updated>
+        <id>https://blog.jamesst.one661</id>
+        <content type="html">&lt;p&gt;Cloud HQ –  How I &lt;small&gt; (automatically) &lt;/small&gt; sync all my files across the web.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-it-is&quot;&gt;What it is&lt;/h1&gt;
+
+&lt;p&gt;Simply – Cloud HQ is an online service that allows you to sync your files across multiple file storing services.&lt;/p&gt;
+
+&lt;h1 id=&quot;supported-services&quot;&gt;Supported Services&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/post_assets/cloudHQ-Manage-Services1.png&quot; alt=&quot;Cloud HQ Supported Services&quot; /&gt;
+Cloud HQ Supported Services as of 23/5/14&lt;/p&gt;
+
+&lt;p&gt;Cloud HQ currently supports the following syncing services:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Google Drive&lt;/li&gt;
+  &lt;li&gt;Gmail&lt;/li&gt;
+  &lt;li&gt;Dropbox&lt;/li&gt;
+  &lt;li&gt;Box&lt;/li&gt;
+  &lt;li&gt;Evernote&lt;/li&gt;
+  &lt;li&gt;Onedrive&lt;/li&gt;
+  &lt;li&gt;Onedrive Pro&lt;/li&gt;
+  &lt;li&gt;Share Point&lt;/li&gt;
+  &lt;li&gt;WebDAV&lt;/li&gt;
+  &lt;li&gt;Basecamp Classic&lt;/li&gt;
+  &lt;li&gt;Basecamp&lt;/li&gt;
+  &lt;li&gt;Sugar Sync&lt;/li&gt;
+  &lt;li&gt;Egnyte&lt;/li&gt;
+  &lt;li&gt;Yandex Disk&lt;/li&gt;
+  &lt;li&gt;Microsoft Onenote (maybe soon)&lt;/li&gt;
+  &lt;li&gt;Salesforce (maybe soon)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;chrome-extension&quot;&gt;Chrome Extension&lt;/h1&gt;
+
+&lt;p&gt;I was incredibly surprised by how helpful the &lt;a href=&quot;https://chrome.google.com/webstore/detail/sync-dropbox-evernote-and/iobcbdgacfkninlcbphihhdlkobkehia&quot;&gt;chrome extension&lt;/a&gt; is.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://chrome.google.com/webstore/detail/sync-dropbox-evernote-and/iobcbdgacfkninlcbphihhdlkobkehia&quot;&gt;extension &lt;/a&gt;not only  allows you to follow what files it has just synced, but in google drive  it also allows you to open a file from any of your connected services.&lt;/p&gt;
+
+&lt;h1 id=&quot;referral-link&quot;&gt;Referral Link&lt;/h1&gt;
+
+&lt;p&gt;If you are interested you can get an extended trial by using this link &lt;a href=&quot;https://cloudHQ.net?r=9u4p&quot;&gt;https://cloudHQ.net?r=9u4p&lt;/a&gt; –  plus you also get to help me!&lt;/p&gt;
+
+</content>
+    </entry>
+    
+    <entry>
+        <title>My Fitbit channel for IFTTT</title>
+        <link href="https://blog.jamesst.one/2014/02/fitbit-channel-ifttt/"/>
+        <updated>2014-02-09T00:00:00+00:00</updated>
+        <id>https://blog.jamesst.one365</id>
+        <content type="html">&lt;p&gt;UPDATE 21/5/14: IFTTT has just released an official &lt;a href=&quot;https://ifttt.com/fitbit&quot;&gt;fitbit channel&lt;/a&gt;. So I recommend everyone uses that. As a result  I will discontinue my version  at the end of this month. Thanks to everyone who tried and particularly those who tested my fitbit channel. I currently have plans for a 3rd party Snapchat Channel. So keep posted :)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;My Fitbit channel for &lt;a href=&quot;/2013/11/ifttt/&quot; title=&quot;Why you should use IFTTT?&quot;&gt;IFTTT&lt;/a&gt;is &lt;del&gt;being&lt;/del&gt; made – &lt;del&gt;sorry to get your hopes up :/ &lt;/del&gt; and i need some people to test it&lt;/p&gt;
+
+&lt;h2 id=&quot;status&quot;&gt;Status&lt;/h2&gt;
+
+&lt;p&gt;As we speak I’m currently coding a 3rd party IFTTT channel for Fitbit. It will work by pretending to be a wordpress blog. So unfortunately this channel would prevent the use of the WordPress channel I’m hoping to get the IFTTT channel out in&lt;del&gt; about a month &lt;/del&gt; a week or so ( but that depends on how much help I get :P  )  The first version will only have actions. A future version may be made that has triggers as well.&lt;/p&gt;
+
+&lt;p&gt;However, as I don’t really have a use for that ( I don’t own a fitbit) it depends on if I get a fitbit – &lt;em&gt;please see below&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Speaking of which if you can donate/ find this project helpful or would like to increase your chance of getting triggers. Please help me buy a fitbit?&lt;/p&gt;
+
+&lt;h2 id=&quot;how-you-can-help&quot;&gt;How you can help&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I am after some alpha/beta testers for the fitbit channel Update: anyone interested please go &lt;a href=&quot;https://github.com/jamesmstone/OUTDATED-ifttt-fitbit&quot;&gt;here&lt;/a&gt; and leave a comment on the post with any feedback&lt;/li&gt;
+  &lt;li&gt;I’m curious about the legal requirements with holding medical/fitness data about individuals from all over the world. Obviously I wouldn’t keep the data for longer then I would be required to. So if you have an expertise in this area please contact me by leaving a comment.&lt;/li&gt;
+  &lt;li&gt;Buy me a fitbit. I don’t have the money for one – I’m just a &lt;a href=&quot;/2013/11/im-blogging/&quot; title=&quot;Why I blog? aka Welcome&quot;&gt;kid&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;want-to-keep-updated&quot;&gt;Want to keep updated?&lt;/h2&gt;
+
+</content>
+    </entry>
+    
+    <entry>
+        <title>A New Design</title>
+        <link href="https://blog.jamesst.one/2013/12/new-design/"/>
+        <updated>2013-12-22T00:00:00+00:00</updated>
+        <id>https://blog.jamesst.one717</id>
+        <content type="html">&lt;p&gt;I did it! – I finally got round to designing my own version of the site.&lt;/p&gt;
+
+&lt;p&gt;The new design is live now, so please let me know what you think (nothing is perfect the first time).
+Hopefully there are no bugs, but if you see any please let me know by leaving a comment.&lt;/p&gt;
+
+&lt;p&gt;Enjoy the new design.&lt;/p&gt;
+</content>
+    </entry>
+    
+    <entry>
+        <title>The Best Blogs Ever</title>
+        <link href="https://blog.jamesst.one/2013/12/best-blogs-ever/"/>
+        <updated>2013-12-16T00:00:00+00:00</updated>
+        <id>https://blog.jamesst.one349</id>
+        <content type="html">&lt;p&gt;Ok you got me these may not be &lt;em&gt;the best blogs ever&lt;/em&gt;, however these are the blogs I’m obsessed with and read every post of.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;For all the websites, I have grouped them by category and added their &lt;a href=&quot;http://www.alexa.com/&quot;&gt;Alexa rank&lt;/a&gt; &lt;em&gt;(as of 26th Nov 13)&lt;/em&gt; along side the site.&lt;/p&gt;
+
+&lt;h2 id=&quot;tech&quot;&gt;Tech&lt;/h2&gt;
+
+&lt;h3 id=&quot;general&quot;&gt;General&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.lifehacker.com.au/&quot;&gt;Lifehacker AUS&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 14,003&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.lifehacker.com&quot;&gt;Lifehacker USA&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 504&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.bufferapp.com/&quot;&gt;The Buffer Blog&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 1,526&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.ifttt.com/&quot;&gt;IFTTT Blog&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 5,464&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://kinja.com/tag/how-i-work&quot;&gt;Kinja: How I Work&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank, not relevant as this is a tag from &lt;a href=&quot;http://www.kinja.com/&quot;&gt;Kinja Blogs&lt;/a&gt; by Gawker&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;web-development&quot;&gt;Web development&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://tympanus.net/codrops/&quot;&gt;Codrops&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 1,403 &lt;em&gt;Note: rank for the entire site &lt;a href=&quot;http://tympanus.net/&quot;&gt;tympanus.net&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://css-tricks.com/&quot;&gt;CSS Tricks&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 1,051&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.smashingmagazine.com/&quot;&gt;Smashing Magazine&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 944&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://davidwalsh.name/&quot;&gt;David Walsh&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 4,526&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://lea.verou.me/&quot;&gt;Lea Verou&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 54,903&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://webdesignerwall.com/&quot;&gt;Web Designer Wall&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 7,992&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;web-inspiration&quot;&gt;Web inspiration&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://onepagemania.com/&quot;&gt;One Page Mania&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 108,629&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.awwwards.com/&quot;&gt;Awwwards&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 2,733&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;humour&quot;&gt;Humour&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cracked.com/&quot;&gt;Cracked&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 653&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.explosm.net/&quot;&gt;Explosm&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 3,933&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://theoatmeal.com/&quot;&gt;The Oatmeal&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 2739&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://xkcd.com/&quot;&gt;xkcd&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Alexa Rank: 1,924&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://what-if.xkcd.com/&quot;&gt;What If xkcd&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Maybe your blog or site?&lt;/p&gt;
+
+&lt;p&gt;What blogs / sites are you obsessed with?&lt;/p&gt;
+</content>
+    </entry>
+    
+    <entry>
+        <title>The Ultimate Free Music Setup</title>
+        <link href="https://blog.jamesst.one/2013/12/ifttt-music-system/"/>
+        <updated>2013-12-06T00:00:00+00:00</updated>
+        <id>https://blog.jamesst.one49</id>
+        <content type="html">&lt;p&gt;&lt;img src=&quot;/post_assets/Ultimate-Music-Cover.png&quot; alt=&quot;Ultimate Music Cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;
+  How to get the ultimate free music setup &amp;#8211; &lt;em&gt;ok maybe it&amp;#8217;s not the ultimate setup, but it&amp;#8217;s still pretty cool&lt;/em&gt;
+&lt;/p&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;
+  &lt;strong&gt;Features&lt;/strong&gt;: Continuous free, legal and unlimited, personally recommended songs that support the artist. &amp;#8211; &lt;em&gt;sorry the ended up being a mouthfull&lt;/em&gt;
+&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;the-system&quot;&gt;The System&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;/post_assets/Ultimate-Music-Diagram.png&quot;&gt;&lt;img src=&quot;/post_assets/Ultimate-Music-Diagram.png&quot; alt=&quot;Ultimate Music Diagram&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Get an account for each service / download the software
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://dropbox.com&quot;&gt;Dropbox&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.ifttt.com&quot;&gt;IFTTT&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.spotify.com/&quot;&gt;Spotify&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://tribe.nu/Blockify.html&quot;&gt;Blockify&lt;/a&gt; - windows only or potentially &lt;a href=&quot;http://smutefy.inacho.es&quot;&gt;Smutefy&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.last.fm&quot;&gt;Last Fm&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Link them all together
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.guidingtech.com/16755/enable-last-fm-spotify-windows-mobile/&quot;&gt;Spotify to Last.fm&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;open up Spotify preferences&lt;/li&gt;
+          &lt;li&gt;tick scrobble to Last.Fm and enter your Last.Fm details&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Last.fm to IFTTT to Dropbox
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a class=&quot;embed_recipe embed_recipe-l_82&quot; id=&quot;embed_recipe-70959&quot; href=&quot;https://ifttt.com/view_embed_recipe/70959&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;IFTTT Recipe: save #free #music to #dropbox  based on your  #last.fm free music recommendations &quot; src=&quot;https://ifttt.com/recipe_embed_img/70959&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Dropbox to Blockify to Spotify
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img class=&quot;alignnone size-full wp-image-481&quot; alt=&quot;Blockify&quot; src=&quot;/post_assets/Blockify.png&quot; width=&quot;361&quot; height=&quot;212&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;Open up Blockify  then choose your Dropbox music folder by going Options -&amp;gt; Set Folder&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;extra-points&quot;&gt; Extra points&lt;/h2&gt;
+
+&lt;p&gt;Sync your new Dropbox music folder to your mobile device using an app like &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.doublecore.musicdropnplay&quot; target=&quot;_blank&quot;&gt;MusicDropNPLay&lt;/a&gt; for Android or  &lt;a href=&quot;https://itunes.apple.com/us/app/tunebox-dropbox-music-player/id475688071&quot; target=&quot;_blank&quot;&gt;Tunebox&lt;/a&gt; for iOS.&lt;/p&gt;
+
+&lt;h2 id=&quot;further-reading&quot;&gt;Further Reading&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/2013/11/ifttt-spotify-playlist-dropbox/&quot; title=&quot;IFTTT: Spotify playlist to Dropbox&quot;&gt;Other IFTTT music recipes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2013/11/my-ifttt-recipes/&quot; title=&quot;How I use IFTTT&quot;&gt;How else I use IFTTT&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ifttt.com/p/jamesmstone&quot;&gt;My public IFTTT recipes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+    </entry>
+    
+    <entry>
+        <title>How to automatically take a photo of a phone thief</title>
+        <link href="https://blog.jamesst.one/2013/11/automatically-take-photo-phone-thief-android/"/>
+        <updated>2013-11-25T00:00:00+00:00</updated>
+        <id>https://blog.jamesst.one525</id>
+        <content type="html">&lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.bloketech.lockwatch&quot;&gt;Lockwatch Anti-Theft&lt;/a&gt; is an android app that takes a photo using the front facing camera when your passcode is incorrectly entered. It then sends that photo along with the phones’ current GPS location to your email account.&lt;/p&gt;
+
+&lt;p&gt;Lockwatch by default has a nice feature enabled to prevent false alarms. This means Lockwatch will give you 10 seconds to type in the correct password before it sends the alert. If you type in the correct password, the alert will be cancelled and you will not receive an e-mail.&lt;/p&gt;
+
+&lt;h2 id=&quot;extra-points&quot;&gt;Extra Points&lt;/h2&gt;
+
+&lt;p&gt;&lt;a name=&quot;ExtraPoints&quot;&gt;&lt;/a&gt;
+Want the photo to automatically be added to your dropbox. Using &lt;a title=&quot;Why you should use IFTTT?&quot; href=&quot;/2013/11/ifttt/&quot;&gt;IFTTT&lt;/a&gt; you can.
+If you follow the steps above and have the email address be a gmail one. You can use the IFTTT recipe below:
+&lt;a class=&quot;embed_recipe embed_recipe-l_61&quot; id=&quot;embed_recipe-130299&quot; href=&quot;https://ifttt.com/view_embed_recipe/130299&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;IFTTT Recipe: Take a photo of a phone thief and add it to dropbox [Android]&quot; src=&quot;https://ifttt.com/recipe_embed_img/130299&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;other-ifttt-recipes&quot;&gt;Other IFTTT recipes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I recently made a post about how I use IFTTT -&lt;em&gt;&lt;a href=&quot;/2013/11/my-ifttt-recipes/&quot; title=&quot;How I use IFTTT&quot;&gt;interested&lt;/a&gt;?&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ifttt.com/p/jamesmstone&quot;&gt;My Public IFTTT Profile&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;help&quot;&gt;Help&lt;/h2&gt;
+
+&lt;p&gt;Need help? Have a suggestion? Please leave a comment&lt;/p&gt;
+
+</content>
+    </entry>
+    
+    <entry>
+        <title>My Awesome Stuff List</title>
+        <link href="https://blog.jamesst.one/2013/11/awesome-list/"/>
+        <updated>2013-11-22T00:00:00+00:00</updated>
+        <id>https://blog.jamesst.one337</id>
+        <content type="html">&lt;p&gt;Not a bucket list – &lt;em&gt;just a lot like one&lt;/em&gt; :P&lt;/p&gt;
+
+&lt;h2 id=&quot;adrenaline&quot;&gt;Adrenaline&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;bungee jump&lt;/li&gt;
+  &lt;li&gt;skydive&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;travel&quot;&gt;Travel&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Visit every continent
+    &lt;ul&gt;
+      &lt;li&gt;&lt;del&gt;Australiasia&lt;/del&gt;&lt;/li&gt;
+      &lt;li&gt;Africa&lt;/li&gt;
+      &lt;li&gt;&lt;del&gt;Asia&lt;/del&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;del&gt;Europe&lt;/del&gt; – &lt;em&gt;fun fact: only continent without an “a” and every other has at least 2&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;North America&lt;/li&gt;
+      &lt;li&gt;South America&lt;/li&gt;
+      &lt;li&gt;Antartica&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Visit the 7 natural wonders of the world -&lt;em&gt;as decided be me :)&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Grand Canyon&lt;/li&gt;
+      &lt;li&gt;&lt;del&gt;Great Barrier Reef&lt;/del&gt;&lt;/li&gt;
+      &lt;li&gt;Harbor of Rio de Janeiro&lt;/li&gt;
+      &lt;li&gt;visit Mount Everest base camp&lt;/li&gt;
+      &lt;li&gt;See the Aurora
+        &lt;ul&gt;
+          &lt;li&gt;Australis&lt;/li&gt;
+          &lt;li&gt;Borealis&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Victoria Falls&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Swim in every ocean
+    &lt;ul&gt;
+      &lt;li&gt;&lt;del&gt;Pacific&lt;/del&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;del&gt;Indian&lt;/del&gt;&lt;/li&gt;
+      &lt;li&gt;Atlantic&lt;/li&gt;
+      &lt;li&gt;Southern&lt;/li&gt;
+      &lt;li&gt;Arctic&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;fitness&quot;&gt; Fitness&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Run a marathon&lt;/li&gt;
+  &lt;li&gt;Run a triathlon&lt;/li&gt;
+  &lt;li&gt;100 consecutive pushups&lt;/li&gt;
+  &lt;li&gt;200 consecutive situps&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h2 id=&quot;cool-stuff-to-deldream-of-delmasterdelingdel&quot;&gt;Cool stuff to &lt;del&gt;dream of &lt;/del&gt;master&lt;del&gt;ing&lt;/del&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Shuffling#Riffle&quot;&gt;Awesome shuffle card&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Walking hand stand&lt;/li&gt;
+  &lt;li&gt;Flip&lt;/li&gt;
+  &lt;li&gt;Song on guitar&lt;/li&gt;
+  &lt;li&gt;Solve a Rubix cube&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;other-items&quot;&gt;Other items&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Go without Internet for a month&lt;/li&gt;
+  &lt;li&gt;Go without a computer for a month&lt;/li&gt;
+  &lt;li&gt;Die with a smile on my face – yeah im odd&lt;/li&gt;
+  &lt;li&gt;Break a world record – suggestions?? what world record should I attempt?&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
+    
+    <entry>
+        <title>Update: Spotify playlist to Dropbox</title>
+        <link href="https://blog.jamesst.one/2013/11/update-spotify-playlist-dropbox/"/>
+        <updated>2013-11-11T00:00:00+00:00</updated>
+        <id>https://blog.jamesst.one269</id>
+        <content type="html">&lt;p&gt;How to update to the latest version of this IFTTT Recipe&lt;/p&gt;
+
+&lt;h1 id=&quot;issue-resolved&quot;&gt;Issue Resolved:&lt;/h1&gt;
+
+&lt;h2 id=&quot;steps-to-implement-fix&quot;&gt;Steps to implement fix:&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In your IFTTT recipe change the URL field to &lt;a href=&quot;/2015/02/ifttt-spotify-playlist-dropbox-version-2/&quot;&gt;http://ifttt.jamesstone.com.au/?type=&amp;amp;uri=&lt;/a&gt; making sure to change:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;?type=&lt;/code&gt; to either &lt;code&gt;?type=full&lt;/code&gt; or &lt;code&gt;?type=exact&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;&amp;amp;uri=&lt;/code&gt; to &lt;code&gt;&amp;amp;uri=&lt;/code&gt; with your spotify playlist URI appended – example &lt;code&gt;http://ifttt.jamesstone.com.au/?type=full&amp;amp;uri=spotify:user:spotify:playlist:4hOKQuZbraPDIfaGbM3lKI&lt;/code&gt; &lt;em&gt;(Top 100 songs on Spotify)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;del&gt;This is a post detailing an issue with the &lt;a title=&quot;IFTTT: Spotify playlist to Dropbox&quot; href=&quot;/2013/11/ifttt-spotify-playlist-dropbox/&quot;&gt;Spotify playlist to Dropbox recipe&lt;/a&gt;&lt;/del&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;delissuedel&quot;&gt;&lt;del&gt;Issue&lt;/del&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;del&gt;The rss file that is generated by yahoo pipes takes to long to load and IFTTT often timesout.&lt;/del&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;delsolutiondel&quot;&gt;&lt;del&gt;Solution&lt;/del&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;del&gt;Slowly being developed.Provide a Cache for IFTTT so when IFTTT loads the  rss file it doses’t time out.&lt;/del&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;delhow-you-can-helpdel&quot;&gt;&lt;del&gt;How you can help&lt;/del&gt;&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;del&gt;Keep me posted on any future bugs by leaving a comment&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;&lt;span style=&quot;color: #444444; font-family: Arial, Helvetica, sans-serif;&quot;&gt;If you know any PHP and are willing to help please leave a comment (I know almost none) &lt;/span&gt;&lt;/del&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;del&gt;I’m after some PHP code that for an rss file on request:&lt;/del&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;del&gt;Checks for previous cache of the file&lt;/del&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;del&gt;If previous cache found:&lt;/del&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;del&gt;send current cached file ( would be slightly old)&lt;/del&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;del&gt;then once sent “cached version”&lt;/del&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;del&gt;get current rss version and update the cache&lt;/del&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;del&gt;If previous cache not found:&lt;/del&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;del&gt;get current rss cache&lt;/del&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;del&gt;send current rss file&lt;/del&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;del&gt;then once sent loads “live version” to cache&lt;/del&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;delnotedel&quot;&gt;&lt;del&gt;Note:&lt;/del&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;del&gt;The recipes still work, however they aren’t trigger as frequently as they should be.&lt;/del&gt;&lt;/p&gt;
+
+</content>
+    </entry>
+    
+    <entry>
+        <title>Google celebrates your birthday</title>
+        <link href="https://blog.jamesst.one/2013/11/google-celebrates-birthday/"/>
+        <updated>2013-11-08T00:00:00+00:00</updated>
+        <id>https://blog.jamesst.one241</id>
+        <content type="html">&lt;p&gt;&lt;img src=&quot;/post_assets/Screenshot-2013-11-07-09.42.46.png&quot; alt=&quot;Google Birthday&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Thanks Google. What a cool personalised Google birthday doodle.&lt;/p&gt;
+
+&lt;p&gt;After visiting Google’s homepage on my birthday I got a pleasant surprise. Google now celebrates your birthday with a doodle.&lt;br /&gt;
+To get a personalise Google Doodle on your birthday you have to be signed in and obviously it has to be your birthday.&lt;/p&gt;
+</content>
+    </entry>
+    
+    <entry>
+        <title>How I use IFTTT</title>
+        <link href="https://blog.jamesst.one/2013/11/my-ifttt-recipes/"/>
+        <updated>2013-11-06T00:00:00+00:00</updated>
+        <id>https://blog.jamesst.one41</id>
+        <content type="html">&lt;p&gt;After reading &lt;a href=&quot;http://aaronfrancis.com/&quot;&gt;Aaron Francis&lt;/a&gt;‘ blog &lt;a href=&quot;http://aaronfrancis.com/blog/2013/2/26/how-i-use-evernote-and-ifttt&quot;&gt;post&lt;/a&gt; about how he uses Evernote and IFTTT I felt inspired to make this post about how I use IFTTT.&lt;/p&gt;
+
+&lt;p&gt;At present I have 22  IFTTT recipes. Here are some of my favourite.&lt;/p&gt;
+
+&lt;h2 id=&quot;education-related-recipes&quot;&gt;Education related recipes&lt;/h2&gt;
+
+&lt;p&gt;&lt;a class=&quot;embed_recipe embed_recipe-l_77&quot; id=&quot;embed_recipe-102035&quot; href=&quot;https://ifttt.com/view_embed_recipe/102035&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;IFTTT Recipe: Add a random #Wikipedia article to #Feedly every day to increase my knowledge&quot; src=&quot;https://ifttt.com/recipe_embed_img/102035&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Lots of my school related recipes are:&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;embed_recipe embed_recipe-l_51&quot; id=&quot;embed_recipe-121707&quot; href=&quot;https://ifttt.com/view_embed_recipe/121707&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;IFTTT Recipe: Auto add #class notes to #Evernote. -- #school #uni&quot; src=&quot;https://ifttt.com/recipe_embed_img/121707&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;music-related&quot;&gt;Music Related&lt;/h2&gt;
+
+&lt;p&gt;&lt;a class=&quot;embed_recipe embed_recipe-l_83&quot; id=&quot;embed_recipe-106702&quot; href=&quot;https://ifttt.com/view_embed_recipe/106702&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;IFTTT Recipe: Add #Free #Music to my #Dropbox  -- via #last.fm (but no need for a lastfm account)&quot; src=&quot;https://ifttt.com/recipe_embed_img/106702&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;embed_recipe embed_recipe-l_94&quot; id=&quot;embed_recipe-15575&quot; href=&quot;https://ifttt.com/view_embed_recipe/15575&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;IFTTT Recipe: SoundCloud fav to Dropbox folder - MP3 download if available // #soundcloud #download #dropbox&quot; src=&quot;https://ifttt.com/recipe_embed_img/15575&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sync-my-services&quot;&gt;Sync my Services&lt;/h2&gt;
+
+&lt;p&gt;&lt;a class=&quot;embed_recipe embed_recipe-l_71&quot; id=&quot;embed_recipe-8981&quot; href=&quot;https://ifttt.com/view_embed_recipe/8981&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;IFTTT Recipe: When #Facebook profile picture changes, update #Twitter profile picture&quot; src=&quot;https://ifttt.com/recipe_embed_img/8981&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;auto-post&quot;&gt;Auto post&lt;/h2&gt;
+
+&lt;p&gt;I try to keep my auto posting recipes to a minimum.  I do this, as I hate browsing through a social network and seeing posts that have obviously been &lt;em&gt;auto posted&lt;/em&gt;. Anyway here are my auto posting recipes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Update my Facebook Status “Happy New Year” every year on the 1st of Jan at midnight&lt;/li&gt;
+  &lt;li&gt;Update my Facebook Status “Merry Christmas” every year on the 25th of Dec at 11:22 am&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;public-recipes&quot;&gt;Public Recipes&lt;/h2&gt;
+
+&lt;p&gt;You can view all my public recipes &lt;a href=&quot;https://ifttt.com/p/jamesmstone&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;How do you use IFTTT? What are your favourite IFTTT recipes?&lt;/p&gt;
+
+</content>
+    </entry>
+    
+    <entry>
+        <title>IFTTT: Spotify playlist to Dropbox</title>
+        <link href="https://blog.jamesst.one/2013/11/ifttt-spotify-playlist-dropbox/"/>
+        <updated>2013-11-06T00:00:00+00:00</updated>
+        <id>https://blog.jamesst.one193</id>
+        <content type="html">&lt;p&gt;&lt;a href=&quot;/2015/02/ifttt-spotify-playlist-dropbox-version-2/&quot;&gt;New Version now available&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This is a post about an IFTTT recipe I made. Not sure what &lt;a href=&quot;/2013/11/ifttt/&quot; title=&quot;Why you should use IFTTT?&quot;&gt;IFTTT is&lt;/a&gt;?&lt;/p&gt;
+
+&lt;h2 id=&quot;what-this-recipe-does&quot;&gt;What this recipe does&lt;/h2&gt;
+
+&lt;p&gt;These recipes download the songs in your Spotify Playlist via Last.fm Free Music and Soundcloud downloadable tracks. The tracks at these sites have been submitted by the artist and been marked as free and downloadable for the public.&lt;/p&gt;
+
+&lt;h2 id=&quot;recipes&quot;&gt;Recipes&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;What’s the difference?&lt;/strong&gt; &lt;em&gt;Download only exact matches&lt;/em&gt; only does steps 1 to 3 of &lt;em&gt;How it Works  &lt;/em&gt;Below. As such it is very limiting (it only gets the exact song).&lt;/p&gt;
+
+&lt;h3 id=&quot;download-only-exact-matches-source-lastfm-free-music&quot;&gt;Download only exact matches (source Last.fm Free Music)&lt;/h3&gt;
+
+&lt;p&gt;Save to box&lt;br /&gt;
+&lt;a id=&quot;embed_recipe-126747&quot; class=&quot;embed_recipe embed_recipe-l_83&quot; href=&quot;https://ifttt.com/view_embed_recipe/126747&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126747&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #Box #free #music #Exact&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Save to dropbox&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;embed_recipe-126750&quot; class=&quot;embed_recipe embed_recipe-l_87&quot; href=&quot;https://ifttt.com/view_embed_recipe/126750&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126750&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #Dropbox #free #music #Exact&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
+Save to google drive&lt;br /&gt;
+&lt;a id=&quot;embed_recipe-126748&quot; class=&quot;embed_recipe embed_recipe-l_91&quot; href=&quot;https://ifttt.com/view_embed_recipe/126748&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126748&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #googledrive #free #music #Exact&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;save to skydrive&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;embed_recipe-126749&quot; class=&quot;embed_recipe embed_recipe-l_88&quot; href=&quot;https://ifttt.com/view_embed_recipe/126749&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126749&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #Skydrive #free #music #Exact&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;download-all-source-lastfm-free-music-and-soundcloud&quot;&gt;Download all (Source Last.fm Free Music and Soundcloud)&lt;/h3&gt;
+
+&lt;p&gt;Save to box&lt;br /&gt;
+&lt;a id=&quot;embed_recipe-126754&quot; class=&quot;embed_recipe embed_recipe-l_81&quot; href=&quot;https://ifttt.com/view_embed_recipe/126754&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126754&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #Box #free #music #all&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Save to dropbox&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;embed_recipe-126753&quot; class=&quot;embed_recipe embed_recipe-l_85&quot; href=&quot;https://ifttt.com/view_embed_recipe/126753&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126753&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #Dropbox #free #music #all&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
+Save to google drive&lt;br /&gt;
+&lt;a id=&quot;embed_recipe-126752&quot; class=&quot;embed_recipe embed_recipe-l_89&quot; href=&quot;https://ifttt.com/view_embed_recipe/126752&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126752&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #googledrive #free #music #all&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;save to skydrive&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;embed_recipe-126751&quot; class=&quot;embed_recipe embed_recipe-l_86&quot; href=&quot;https://ifttt.com/view_embed_recipe/126751&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://ifttt.com/recipe_embed_img/126751&quot; alt=&quot;IFTTT Recipe: auto #Download the new songs in a #Spotify playlist  to my #Skydrive #free #music #all&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;set-up-instructions&quot;&gt;Set up Instructions&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;In Spotify right click on your playlist and select &lt;em&gt;Copy Spotify URI &lt;/em&gt; then go to the desired recipe&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;/post_assets/Screenshot-2013-11-06-17.29.24.png&quot; alt=&quot;How to Copy Spotify URI&quot; /&gt; How to Copy Spotify URI&lt;/li&gt;
+      &lt;li&gt;Then go to the desired recipe (&lt;em&gt;links above&lt;/em&gt;)&lt;/li&gt;
+      &lt;li&gt;In the URL field paste your &lt;em&gt;Spotify URI &lt;/em&gt;after the &lt;code&gt;=&lt;/code&gt; sign ( or you can leave it as  &lt;em&gt;spotify:user:spotify:playlist:4hOKQuZbraPDIfaGbM3lKI&lt;/em&gt; for &lt;a href=&quot;spotify:user:spotify:playlist:4hOKQuZbraPDIfaGbM3lKI&quot;&gt;Top 100 tracks currently on Spotify&lt;/a&gt; playlist )&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;/post_assets/Screenshot-2013-11-06-18.23.19.png&quot; alt=&quot;Paste the Spotify URI after the &amp;quot;=&amp;quot; sign&quot; /&gt; Paste the Spotify URI after the &lt;code&gt;=&lt;/code&gt; sign&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Yahoo pipes checks your spotify playlist&lt;/li&gt;
+  &lt;li&gt;Then song by song it checks to see if the song is available legally for free from Last.fm&lt;/li&gt;
+  &lt;li&gt;If it is Yahoo Pipes tells IFTTT to add it to your dropbox or equivilent.&lt;/li&gt;
+  &lt;li&gt;If it isn’t Yahoo Pipes searches Soundcloud for the songs title and artist and then downloads the first &lt;em&gt;downloadable&lt;/em&gt; song. This is why remixed version are often downloaded.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;delupdate-issuesdel&quot;&gt;&lt;del&gt;Update: Issues&lt;/del&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;del&gt;The recipes will still work, however the recipes aren’t triggered as frequently as they should be. [&lt;a title=&quot;Update: Spotify playlist to Dropbox&quot; href=&quot;/2013/11/update-spotify-playlist-dropbox/&quot;&gt;Details&lt;/a&gt;]&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;Fixed [&lt;a href=&quot;/2013/11/update-spotify-playlist-dropbox/&quot; title=&quot;Update: Spotify playlist to Dropbox&quot;&gt;Details&lt;/a&gt;]&lt;/p&gt;
+
+&lt;h2 id=&quot;other-ifttt-recipes&quot;&gt;Other IFTTT recipes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I recently made a post about how I use IFTTT -&lt;em&gt;&lt;a href=&quot;/2013/11/my-ifttt-recipes/&quot; title=&quot;How I use IFTTT&quot;&gt;interested&lt;/a&gt;?&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ifttt.com/p/jamesmstone&quot; target=&quot;_blank&quot;&gt;My Public IFTTT Profile&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;help&quot;&gt;Help&lt;/h2&gt;
+
+&lt;p&gt;Need help? Have a suggestion? Please leave a comment&lt;/p&gt;
+
+</content>
+    </entry>
+    
+    <entry>
+        <title>Why you should use IFTTT?</title>
+        <link href="https://blog.jamesst.one/2013/11/ifttt/"/>
+        <updated>2013-11-05T00:00:00+00:00</updated>
+        <id>https://blog.jamesst.one29</id>
+        <content type="html">&lt;p&gt;IFTTT is an amazing tool. It has made my life online so much easier- *are you sold? *&lt;/p&gt;
+
+&lt;p&gt;So why should you use IFTTT.&lt;/p&gt;
+
+&lt;h1 id=&quot;but-what-is-ifttt&quot;&gt;But what is IFTTT?&lt;/h1&gt;
+
+&lt;p&gt;IFTTT is a service that lets you create powerful connections [between your online accounts] with one simple statement:
+&lt;img src=&quot;/post_assets/ifthisthenthat_big_df311ed95c86c462c5bf2f50ac9405e.png&quot; alt=&quot;If This Then That&quot; /&gt; If This Then That (Image Via: &lt;a href=&quot;http://ifttt.com/wtf&quot;&gt;IFTTT&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;So basically, IFTTT allows you to connect your online services via their &lt;a href=&quot;http://en.wikipedia.org/wiki/Application_programming_interface&quot;&gt;API&lt;/a&gt;‘s. These connections are called &lt;em&gt;recipes&lt;/em&gt;  which are made from the phrase IF &lt;strong&gt;THIS&lt;/strong&gt; THEN &lt;strong&gt;THAT.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;still-don8217t-get-it&quot;&gt;Still don’t get it?&lt;/h2&gt;
+
+&lt;p&gt;Sorry that’s my fault. It’s a hard concept to explain. I think an example will help.&lt;/p&gt;
+
+&lt;p&gt;IFTTT allows you to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a class=&quot;embed_recipe embed_recipe-l_33&quot; id=&quot;embed_recipe-24908&quot; href=&quot;https://ifttt.com/view_embed_recipe/24908&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;IFTTT Recipe: Text me the weather every morning&quot; src=&quot;https://ifttt.com/recipe_embed_img/24908&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a class=&quot;embed_recipe embed_recipe-l_71&quot; id=&quot;embed_recipe-8981&quot; href=&quot;https://ifttt.com/view_embed_recipe/8981&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;IFTTT Recipe: When #Facebook profile picture changes, update #Twitter profile picture&quot; src=&quot;https://ifttt.com/recipe_embed_img/8981&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a class=&quot;embed_recipe embed_recipe-l_42&quot; id=&quot;embed_recipe-102384&quot; href=&quot;https://ifttt.com/view_embed_recipe/102384&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;IFTTT Recipe: Backup my contacts to a Google Spreadsheet&quot; src=&quot;https://ifttt.com/recipe_embed_img/102384&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a class=&quot;embed_recipe embed_recipe-l_29&quot; id=&quot;embed_recipe-103371&quot; href=&quot;https://ifttt.com/view_embed_recipe/103371&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;IFTTT Recipe: Email me my new iPhone photos&quot; src=&quot;https://ifttt.com/recipe_embed_img/103371&quot; width=&quot;370px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;There are an infinite number of &lt;a title=&quot;IFTTT recipes&quot; href=&quot;https://ifttt.com/recipes&quot; target=&quot;_blank&quot;&gt;possibilities&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;UPDATE: &lt;/strong&gt; I have since made a post about how I use IFTTT. That post can be found &lt;a href=&quot;/2013/11/my-ifttt-recipes/&quot; title=&quot;How I use IFTTT&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The Services IFTTT support are called channels. Currently there are &lt;a href=&quot;https://ifttt.com/channels&quot;&gt;72 channels&lt;/a&gt; with more regularly being added. To view them all you can click &lt;a href=&quot;https://ifttt.com/channels&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;so-why-use-ifttt&quot;&gt;So why use IFTTT&lt;/h1&gt;
+
+&lt;p&gt;Pretty simply – It will make your life easier.&lt;/p&gt;
+
+</content>
+    </entry>
+    
+    <entry>
+        <title>Why I blog? aka Welcome</title>
+        <link href="https://blog.jamesst.one/2013/11/im-blogging/"/>
+        <updated>2013-11-04T00:00:00+00:00</updated>
+        <id>https://blog.jamesst.one21</id>
+        <content type="html">&lt;p&gt;Welcome to my Blog :)&lt;/p&gt;
+
+&lt;h1 id=&quot;a-little-about-me&quot;&gt;A little about me&lt;/h1&gt;
+
+&lt;p&gt;Name: James Stone&lt;br /&gt;
+Age: 17&lt;br /&gt;
+Job: Student&lt;br /&gt;
+Location: Australia&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;I wasn’t really sure what my first post, &lt;em&gt;my intro post&lt;/em&gt;, should talk about. So I have decided to mention why I’m blogging.&lt;/p&gt;
+
+&lt;p&gt;I have decided to start blogging for a few reasons but I guess the main reason is my online presence.&lt;/p&gt;
+
+&lt;h1 id=&quot;online-presence&quot;&gt;Online Presence&lt;/h1&gt;
+
+&lt;p&gt;Growing up the number of times I have heard the media, school, speakers etc talk about our &lt;em&gt;online image&lt;/em&gt;. Particularly about stories where people have lost jobs or failed to get them over their poor digital image. And like most kids my age I’m sick of hearing their message about why we shouldn’t post anything stupid online as it stays “&lt;em&gt;forever”&lt;/em&gt;. I disagree with this message. I think they should instead be teaching us how to market ourselves online, to create the best possible digital image.&lt;/p&gt;
+
+&lt;p&gt;I think their message is scaring us from contributing to the public web (at least its scaring me!). However I also think that rather than not posting anything online and having a neutral online presence it’s important to have a positive one. So I have decided to take their advice one step further. Rather than not being stupid online, I will try and standout by having a strong positive online presence, that can be used to market myself.&lt;/p&gt;
+
+&lt;h1 id=&quot;future-job&quot;&gt;Future Job?&lt;/h1&gt;
+
+&lt;p&gt;Another key reason why I’m going to blog is for a future job.&lt;/p&gt;
+
+&lt;p&gt;At the moment I’m not really sure what job I would like to have. However, I’m leaning towards a career in IT likely one that involves web development. As such I’ve noticed many blogs and portfolio sites of those in the industry where they display all their works. So I’m also planning on using this as a blog as a place to showcase my creations.&lt;/p&gt;
+
+&lt;h1 id=&quot;credit-where-its-due&quot;&gt;Credit where its due&lt;/h1&gt;
+
+&lt;p&gt;As this is the opening post on this blog, I think it’s important to give credit to the blogs current design. The theme, &lt;a href=&quot;http://scotthsmith.com/projects/decode/&quot;&gt;Decode&lt;/a&gt;, is created by &lt;a href=&quot;http://scotthsmith.com/&quot;&gt;Scott Smith&lt;/a&gt;. However, I’m keen to create my own theme – *I just haven’t had the chance yet *&lt;/p&gt;
+
+&lt;p&gt;I hope you enjoy reading this blog as much as I have so far enjoyed creating it&lt;/p&gt;
+
+&lt;p&gt;Finally, if you have any questions, suggestions etc please leave a comment or &lt;a href=&quot;/contact/&quot;&gt;contact&lt;/a&gt; me &lt;a href=&quot;/contact/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;James&lt;/em&gt;&lt;/p&gt;
+
+</content>
+    </entry>
+    
+
+</feed>
