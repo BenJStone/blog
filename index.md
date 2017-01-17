@@ -6,7 +6,8 @@ menu: main
 
 ## Welcome to James Stone's Personal Blog
 
-This site is still heavily under development... but it's *slowly* getting there.
+This site is still heavily under development... but it's *slowly* getting there. It has been years James, it is now 2017 and your last post was nearly 2 years ago. Get with it. 
+
 
 {% assign loopindex = 0 %}
 {% for page in site.posts %}  
